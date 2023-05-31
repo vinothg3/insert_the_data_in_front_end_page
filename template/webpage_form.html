@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>THIS INSERTED DATA IN WEPAGE FORM</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="tp">Topic_name</label>
+        <select name="tp" id="tp">
+            <option value="tp">....select......</option>
+            {% for i in dt %}
+            <option value="{{i}}">{{ i.Topic_name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <label for="na">Name</label>
+        <input type="text" name="na" id="na" >
+        <br>
+        <br>
+        <label for="ag">Age</label>
+        <input type="number" name="ag" id="ag" ><br>
+        <br>
+        <label for="em">Email</label>
+        <input type="email" name="em" id="em"><br>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+    <br>
+    <br>
+    <br>
+    <table border="2px">
+        <tr>
+            <th>Topic_name</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+        </tr>
+        {% for i in wpd %}
+        <tr>
+            <td>{{i.Topic_name}}</td>
+            <td>{{i.Name}}</td>
+            <td>{{i.Age}}</td>
+            <td>{{i.Email}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>

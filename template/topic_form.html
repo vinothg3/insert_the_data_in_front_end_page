@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Topic form  fill</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="topic">Topic_name</label>
+        <input type="text" name="topic" id="topic">
+        <input type="submit" value="submit">
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>LIST OF TOPICS </h2>
+    <table border="2px">
+        <tr>
+            <th>Topic names</th>
+        </tr>
+        {% for i in dt %}
+        <tr>
+            <td><a href="">{{i.Topic_name}}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </center>
+</body>
+</html>
